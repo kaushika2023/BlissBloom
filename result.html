@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Merienda:wght@300..900&family=Sofia&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="images/svideo.mp4" type="video/mp4">
+        </video>
+        <h1>Vibe Check</h1>
+        <div id="resultContainer">
+            <p id="resultText"></p>
+            <img src="flat-world-mental-health-day-background_23-2149671209" alt="Cute Stickers" style="position: fixed; bottom: 20px; right: 20px; width: 100px; height: auto;">
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultText = document.getElementById('resultText');
+            
+            // Get the result from the query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const result = urlParams.get('result');
+
+            // Display the result on the page
+            resultText.textContent = result;
+        });
+    </script>
+</body>
+</html>
