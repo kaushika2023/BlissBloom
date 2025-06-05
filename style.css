@@ -1,0 +1,228 @@
+.devonshire-regular {
+  font-family: "Devonshire", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+  
+.rancho-regular {
+  font-family: "Rancho", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  
+     
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-video {
+  position : absolute;
+  right : 0;
+  bottom : 0 ;
+  z-index : -1;
+}
+@medio(min-aspect-ratio: 16/9){
+  .back-video
+  width : 100%
+  height : auto;
+
+}
+.container {
+  max-width: 800px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 30px;
+  background-color: #f6f8f9; /* Match background color */
+  border-radius: 50px; /* Match border-radius */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Match box-shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    color: #07a2f5; /* Match heading color */
+    font-size: 60px; /* Match font size */
+    font-family:"Devonshire", cursive;
+    font-weight: 50; /* Match font weight */
+    position: relative;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6); /* Match gradient */
+}
+
+form {
+    font-family: 'Poppins', sans-serif;
+}
+
+label {
+    text-align: center;
+    font-weight: 500; /* Match font-weight */
+    color: #000; /* Match label color */
+    font-size: 30px; /* Match font size */
+    font-family:  "Rancho", cursive;
+}
+
+
+
+select,
+input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif; /* Match font-family */
+    background-color: #067cf9; /* Match background color */
+    border: 1px solid #053d86; /* Match border color */
+    border-radius: 5px; /* Match border radius */
+    padding: 2px; /* Match padding */
+    color: #333; /* Match text color */
+}
+
+select:focus,
+input[type="radio"]:focus {
+    outline: none;
+    border-color: #8cf2f6; /* Match focus border color */
+}
+
+.pagination {
+  /* New styles for pagination */
+  background : #fff;
+  padding : 7px;
+  position: absolute;
+  top: 600px; /* Position it below the container */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  margin-top: 20px; /* Add some top margin */
+}
+
+.pagination button {
+  /* Button styles */
+  padding: 10px 20px;
+  background-color: #8cf2f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.pagination button:hover {
+  background-color: #8cf2f6;
+}
+
+/* Add styles for next and submit buttons */
+
+
+/* Basic button styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: #000;
+}
+
+.button {
+  padding: 15px 30px; /* Adjust padding to increase button size */
+  font-size: 18px; /* Increase font size */
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0959c9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0959c9;
+}
+
+.button:focus {
+  outline: none;
+}
+
+
+
+
+.bn29 {
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  outline: none;
+  color: white;
+  font-style: 1.2em;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: none;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.bn29:before,
+.bn29:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10em;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 105%;
+  height: 105%;
+  content: "";
+  z-index: -2;
+  background-size: 400% 400%;
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+}
+
+.bn29:before {
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-animation: pulse 10s infinite ease;
+  animation: pulse 10s infinite ease;
+}
+
+.bn29:after {
+  -webkit-filter: blur(0.3px);
+  filter: blur(0.3px);
+}
+
+.bn29:hover:before {
+  width: 115%;
+  height: 115%;
+}
