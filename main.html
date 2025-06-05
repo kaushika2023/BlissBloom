@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Merienda:wght@300..900&family=Sofia&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Devonshire&family=Rancho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="images/video.mp4" type="video/mp4">
+        </video>
+        <h1>BlissBloom</h1>
+        <form id="moodForm" action="result.html" method="GET"> <!-- Updated action and method attributes -->
+            <div id="question1">
+                <label for="moodQuestion1">How would you describe your overall mood today?</label><br>
+                <input type="radio" id="moodQuestion1_Happy" name="moodQuestion1" value="Happy">
+                <label for="moodQuestion1_Happy">Happy</label><br>
+                <input type="radio" id="moodQuestion1_Sad" name="moodQuestion1" value="Sad">
+                <label for="moodQuestion1_Sad">Sad</label><br>
+                <input type="radio" id="moodQuestion1_Anxious" name="moodQuestion1" value="Anxious">
+                <label for="moodQuestion1_Anxious">Anxious</label><br>
+                <input type="radio" id="moodQuestion1_Stressed" name="moodQuestion1" value="Stressed">
+                <label for="moodQuestion1_Stressed">Stressed</label><br>
+                <input type="radio" id="moodQuestion1_Neutral" name="moodQuestion1" value="Neutral">
+                <label for="moodQuestion1_Neutral">Neutral</label><br>
+                <button type="button"class="button"onclick="nextQuestion(1, 2)">Next</button>
+            </div>
+
+            <div id="question2" style="display: none;">
+                <label for="moodQuestion2">On a scale of 1 to 10, how would you rate your stress levels right now?</label><br>
+                <input type="radio" id="moodQuestion2_1" name="moodQuestion2" value="1">
+                <label for="moodQuestion2_1">1</label><br>
+                <input type="radio" id="moodQuestion2_2" name="moodQuestion2" value="2">
+                <label for="moodQuestion2_2">2</label><br>
+                <input type="radio" id="moodQuestion2_3" name="moodQuestion2" value="3">
+                <label for="moodQuestion2_3">3</label><br>
+                <input type="radio" id="moodQuestion2_4" name="moodQuestion2" value="4">
+                <label for="moodQuestion2_4">4</label><br>
+                <input type="radio" id="moodQuestion2_5" name="moodQuestion2" value="5">
+                <label for="moodQuestion2_5">5</label><br>
+                <!-- Add other options -->
+                
+                <button type="button"class="button"onclick="nextQuestion(2,3)">Next</button>
+            </div>
+
+            <div id="question3" style="display: none;">
+                <label for="moodQuestion3">Have you been experiencing any physical symptoms of stress or anxiety lately?</label><br>
+                <input type="radio" id="moodQuestion3_Yes" name="moodQuestion3" value="Yes">
+                <label for="moodQuestion3_Yes">Yes</label><br>
+                <input type="radio" id="moodQuestion3_No" name="moodQuestion3" value="No">
+                <label for="moodQuestion3_No">No</label><br>
+                <button type="button"class="button"onclick="nextQuestion(3,4)">Next</button>
+            </div>
+
+            <div id="question4" style="display: none;">
+                <label for="moodQuestion4">How would you describe your sleep quality over the past week?</label><br>
+                <input type="radio" id="moodQuestion4_Excellent" name="moodQuestion4" value="Excellent">
+                <label for="moodQuestion4_Excellent">Excellent</label><br>
+                <input type="radio" id="moodQuestion4_Good" name="moodQuestion4" value="Good">
+                <label for="moodQuestion4_Good">Good</label><br>
+                <input type="radio" id="moodQuestion4_Fair" name="moodQuestion4" value="Fair">
+                <label for="moodQuestion4_Fair">Fair</label><br>
+                <input type="radio" id="moodQuestion4_Poor" name="moodQuestion4" value="Poor">
+                <label for="moodQuestion4_Poor">Poor</label><br>
+                <input type="radio" id="moodQuestion4_Very_Poor" name="moodQuestion4" value="Very Poor">
+                <label for="moodQuestion4_Very_Poor">Very Poor</label><br>
+            
+                <button type="button"class="button"onclick="nextQuestion(4,5)">Next</button>
+            </div>
+
+            <div id="question5" style="display: none;">
+                <label for="moodQuestion5">Are there any specific stressors or challenges in your life right now that you'd like to discuss?</label><br>
+                <input type="radio" id="moodQuestion5_Work" name="moodQuestion5" value="Work">
+                <label for="moodQuestion5_Work">Work</label><br>
+                <input type="radio" id="moodQuestion5_Relationships" name="moodQuestion5" value="Relationships">
+                <label for="moodQuestion5_Relationships">Relationships</label><br>
+                <input type="radio" id="moodQuestion5_Health" name="moodQuestion5" value="Health">
+                <label for="moodQuestion5_Health">Health</label><br>
+                <input type="radio" id="moodQuestion5_Finances" name="moodQuestion5" value="Finances">
+                <label for="moodQuestion5_Finances">Finances</label><br>
+            
+                <button type="button"class="button"onclick="nextQuestion(5,6)">Next</button>
+            </div>
+
+            <div id="question6" style="display: none;">
+                <label for="moodQuestion6">How often do you engage in activities that you find enjoyable or relaxing?</label><br>
+                <input type="radio" id="moodQuestion6_Daily" name="moodQuestion6" value="Daily">
+                <label for="moodQuestion6_Daily">Daily</label><br>
+                <input type="radio" id="moodQuestion6_Several" name="moodQuestion6" value="Several times a week">
+                <label for="moodQuestion6_Several">Several times a week</label><br>
+                <input type="radio" id="moodQuestion6_Once" name="moodQuestion6" value="Once a week">
+                <label for="moodQuestion6_Once">Once a week</label><br>
+                <input type="radio" id="moodQuestion6_Rarely" name="moodQuestion6" value="Rarely">
+                <label for="moodQuestion6_Rarely">Rarely</label><br>
+                <input type="radio" id="moodQuestion6_Never" name="moodQuestion6" value="Never">
+                <label for="moodQuestion6_Never">Never</label><br>
+                <!-- Add other options -->
+                <button type="button"class="button"onclick="nextQuestion(6,7)">Next</button>
+            </div>
+            
+
+            <div id="question7" style="display: none;">
+                <label for="moodQuestion7">Would you consider yourself to be generally optimistic or pessimistic about the future?</label><br>
+                <input type="radio" id="moodQuestion7_Optimistic" name="moodQuestion7" value="Optimistic">
+                <label for="moodQuestion7_Optimistic">Optimistic</label><br>
+                <input type="radio" id="moodQuestion7_Pessimistic" name="moodQuestion7" value="Pessimistic">
+                <label for="moodQuestion7_Pessimistic">Pessimistic</label><br>
+                <input type="radio" id="moodQuestion7_Neutral" name="moodQuestion7" value="Neutral">
+                <label for="moodQuestion7_Neutral">Neutral</label><br>
+                <!-- Add other options -->
+                <button type="button"class="button"onclick="nextQuestion(7,8)">Next</button>
+            </div>
+            
+
+            <div id="question8" style="display: none;">
+                <label for="moodQuestion8">How do you typically cope with stress or difficult emotions?</label><br>
+                <input type="radio" id="moodQuestion8_Exercise" name="moodQuestion8" value="Exercise">
+                <label for="moodQuestion8_Exercise">Exercise</label><br>
+                <input type="radio" id="moodQuestion8_Talking" name="moodQuestion8" value="Talking to friends or family">
+                <label for="moodQuestion8_Talking">Talking to friends or family</label><br>
+                <input type="radio" id="moodQuestion8_Meditation" name="moodQuestion8" value="Meditation or mindfulness">
+                <label for="moodQuestion8_Meditation">Meditation or mindfulness</label><br>
+                <input type="radio" id="moodQuestion8_Music" name="moodQuestion8" value="Listening to music">
+                <label for="moodQuestion8_Music">Listening to music</label><br>
+                <input type="radio" id="moodQuestion8_Reading" name="moodQuestion8" value="Reading">
+                <label for="moodQuestion8_Reading">Reading</label><br>
+                <!-- Add other options -->
+                <button type="button"class="button"onclick="nextQuestion(8,9)">Next</button>
+            </div>
+            
+
+            <div id="question9" style="display: none;">
+                <label for="moodQuestion9">Do you have any hobbies or interests that you find particularly fulfilling?</label><br>
+                <input type="radio" id="moodQuestion9_Yes" name="moodQuestion9" value="Yes">
+                <label for="moodQuestion9_Yes">Yes</label><br>
+                <input type="radio" id="moodQuestion9_No" name="moodQuestion9" value="No">
+                <label for="moodQuestion9_No">No</label><br>
+                <button type="button"class="button"onclick="nextQuestion(9,10)">Next</button>
+            </div>
+            
+
+            <div id="question10" style="display: none;">
+                <label for="moodQuestion10">How would you rate your overall energy levels lately?</label><br>
+                <input type="radio" id="moodQuestion10_High" name="moodQuestion10" value="High">
+                <label for="moodQuestion10_High">High</label><br>
+                <input type="radio" id="moodQuestion10_Moderate" name="moodQuestion10" value="Moderate">
+                <label for="moodQuestion10_Moderate">Moderate</label><br>
+                <input type="radio" id="moodQuestion10_Low" name="moodQuestion10" value="Low">
+                <label for="moodQuestion10_Low">Low</label><br>
+                <input type="radio" id="moodQuestion10_Very_Low" name="moodQuestion10" value="Very Low">
+                <label for="moodQuestion10_Very_Low">Very Low</label><br>
+                <!-- Add other options -->
+                <a href="/"><button class="bn29">Submit</button></a>
+            </div>
+            
+            
+        </form>
+    </div>
+    <script src="script.js"></script>
+<script>
+    function nextQuestion(currentQuestion, nextQuestion) {
+        const currentQuestionRadios = document.querySelectorAll(`#question${currentQuestion} input[type="radio"]`);
+        let checked = false;
+
+        currentQuestionRadios.forEach(radio => {
+            if (radio.checked) {
+                checked = true;
+            }
+        });
+
+        if (checked) {
+            document.getElementById('question' + currentQuestion).style.display = 'none';
+            document.getElementById('question' + nextQuestion).style.display = 'block';
+        } else {
+            alert("Please select an option before proceeding.");
+        }
+    }
+</script>
+
+</body>
+</html>
