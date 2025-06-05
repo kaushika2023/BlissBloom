@@ -1,0 +1,89 @@
+.whisper-regular {
+    font-family: "Whisper", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fuzzy-bubbles-regular {
+    font-family: "Fuzzy Bubbles", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fuzzy-bubbles-bold {
+    font-family: "Fuzzy Bubbles", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+    
+  .back-video {
+    position : absolute;
+    right : 0;
+    bottom : 0 ;
+    z-index : -1;
+  }
+  @medio(min-aspect-ratio: 16/9){
+    .back-video
+    width : 100%
+    height : auto;
+
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #fff; /* Match background color */
+    border-radius: 20px; /* Match border-radius */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Match box-shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #0c0283; /* Match heading color */
+    font-family: "Whisper", cursive; /* Match heading font */
+    font-size: 50px; /* Match font size */
+    font-weight: 500; /* Match font weight */
+    position: relative;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6); /* Match gradient */
+}
+
+#resultContainer {
+    background-color: #fff; /* Match background color */
+    padding: 20px;
+    border-radius: 10px; /* Match border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Match box-shadow */
+}
+
+h2 {
+    color: #9b59b6; /* Match heading color */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333; /* Match text color */
+    font-family: "Fuzzy Bubbles", sans-serif;
+}
